@@ -6,6 +6,7 @@ response=requests.get(url)
 
 soup = bs(response.text,'html.parser')
 
+#making dictionary of (topics,their link)
 category_codes = {'Dynamic Programming':'0',
                   'implementation':'0',
                   'math':'0',
@@ -36,6 +37,7 @@ print('\nType the number of category you want to practice')
 print('example - Type 0 if you want to practice DP')
 print()
 
+#printing different categories with their indexes
 for i,j in mapping_categories.items():
     print(str(i)+' '+j)
 
@@ -43,6 +45,7 @@ choosen_cat = int(input())
 
 print('\nYou chose '+str(choosen_cat)+': '+mapping_categories[choosen_cat])
 
+#parsing the webpage of chosen category
 base = 'https://a2oj.com/'
 choosen_cat_code = mapping_categories[choosen_cat]
 req_url = base+category_codes[choosen_cat_code]
@@ -50,7 +53,10 @@ req_url = base+category_codes[choosen_cat_code]
 res = requests.get(req_url)
 soup = bs(res.text,'html.parser')
 
+#dictionary for storing all the problem links of desired category
 problems = {}
+
+#creating set of distinct difficulty levels available
 distinct_levels = set()
 
 #parsing the problems page for getting links and difficulty level of each problem
@@ -83,6 +89,7 @@ for i,j in problems.items():
 
 total = len(req_probs)
 
+#generating random number for getting a random problem
 from random import randint
 random_number = randint(0,total )
 
@@ -100,7 +107,7 @@ if sys.version_info[0]<3:
 else:
     ans=input()
 
-
+#automating the task of opening problem in the default browser of user
 if ans == 'y' or ans == 'Y':
     import webbrowser
     webbrowser.open(req_probs[random_number],new=0,autoraise=True)
