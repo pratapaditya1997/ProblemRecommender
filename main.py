@@ -30,7 +30,7 @@ for cat_name,cat_code in category_codes.items():
     mapping_categories[counter]=cat_name
     counter+=1
 
-print('Type the number of category you want to practice')
+print('\nType the number of category you want to practice')
 print('example - Type 0 if you want to practice DP')
 print()
 
@@ -39,7 +39,7 @@ for i,j in mapping_categories.items():
 
 choosen_cat = int(input())
 
-print('You chose '+str(choosen_cat)+': '+mapping_categories[choosen_cat])
+print('\nYou chose '+str(choosen_cat)+': '+mapping_categories[choosen_cat])
 
 base = 'https://a2oj.com/'
 choosen_cat_code = mapping_categories[choosen_cat]
@@ -65,14 +65,12 @@ for row in tabulka.findAll('tr')[1:]:
             problems[links['href']]=level
 
 print('choose a difficulty level of problem for practice')
-print()
 for i in distinct_levels:
     print(i)
 
 choosen_level = int(input())
 
 print('\nYou have chosen difficulty level = '+ str(choosen_level))
-print()
 
 req_probs = []
 for i,j in problems.items():
