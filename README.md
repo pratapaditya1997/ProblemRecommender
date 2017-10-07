@@ -23,6 +23,7 @@ python main.py
 
 - ![screenshot 2017-10-07 23 44 03](https://user-images.githubusercontent.com/16227280/31310671-d73f9c1c-abb9-11e7-82d5-14f518394aa7.png)
 
+you may get different order of topics
 
 - ![screenshot 2017-10-07 23 44 13](https://user-images.githubusercontent.com/16227280/31310672-d74425ca-abb9-11e7-85c5-322e81e25364.png)
 
