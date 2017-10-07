@@ -93,8 +93,13 @@ print()
 print('Do you want us to open the problem for you in the browser (too lazy to copy and paste :P)')
 print('type [y]/[n]')
 
-# change input() to raw_input() if you have python 2.x
-ans = input()
+#checking the python version for taking the text input
+import sys
+if sys.version_info[0]<3:
+    ans=raw_input()
+else:
+    ans=input()
+
 
 if ans == 'y' or ans == 'Y':
     import webbrowser
