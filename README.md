@@ -5,7 +5,7 @@ Tool for getting a random problem of your desired category and difficulty level 
 ### Getting Started
 
 Clone or Download the zip file on your system.
-Navigate to the file location on your terminal and run 
+Navigate to the file location on your terminal and run
 ```
 python main.py
 ```
@@ -16,13 +16,13 @@ make sure you have following libraries installed:-<br/>
 1. bs4 (BeautifulSoup)
 2. requests
 
-### Note : 
+### Note :
 
-If you are using python 2.x then, on line:94 please change
+If you are using python 2.x then, on line:96 please change
 ```
 input()
 ```
-to 
+to
 ```
 raw_input()
 ```

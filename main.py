@@ -17,6 +17,7 @@ category_codes = {'Dynamic Programming':'0',
                   'Geometry':'0',
                   'strings':'0'}
 
+#parsing for getting the links of respective categories
 for categories in soup.findAll('a'):
     if categories.parent.name == 'td':
         category_name = categories.text
@@ -24,6 +25,7 @@ for categories in soup.findAll('a'):
         if category_name in category_codes:
             category_codes[category_name]=category_code
 
+#mapping the category names with an integer
 mapping_categories={}
 counter=0
 for cat_name,cat_code in category_codes.items():
@@ -51,6 +53,7 @@ soup = bs(res.text,'html.parser')
 problems = {}
 distinct_levels = set()
 
+#parsing the problems page for getting links and difficulty level of each problem
 tabulka = soup.find('table',{'class':'tablesorter'})
 for row in tabulka.findAll('tr')[1:]:
     level = 0
@@ -72,6 +75,7 @@ choosen_level = int(input())
 
 print('\nYou have chosen difficulty level = '+ str(choosen_level))
 
+#making a list of problems of same difficulty as choosen by the user
 req_probs = []
 for i,j in problems.items():
     if j==choosen_level:
@@ -86,7 +90,7 @@ print('\nRandomly generated problem for your practice is -\n')
 print(req_probs[random_number])
 print()
 
-print('Do you want us to open the problem for you in the browser (only if you have selenium installed)')
+print('Do you want us to open the problem for you in the browser (too lazy to copy and paste :P)')
 print('type [y]/[n]')
 
 ans = input()
